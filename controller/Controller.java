@@ -8,7 +8,7 @@ public class Controller {
 		 Memberbean member = null;
 		 AccountBean account = null;
 		 MemberService memberService = new MemberServiceImpl();
-		 AccountBeanService accountBeanService = new AccountBeanServiceImpl();
+		 AccountService accountBeanService = new AccountServiceImpl();
 		while(true) {
 			switch(JOptionPane.showInputDialog("[0.종료]\n"
 					+ "1.회원가입\n"
