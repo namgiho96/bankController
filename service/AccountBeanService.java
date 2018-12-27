@@ -1,20 +1,28 @@
 package service;
 
+import java.util.ArrayList;
+
 import domain.AccountBean;
 
 public interface AccountBeanService {
 
-	public void open(String accountNum);
+	public void createAccount(int money);
 	
-	public AccountBean[] listAccountNum();
+	public String createAccountNum(); //계좌번호 생성
 	
-	public AccountBean[] findbyname();
+	public String findDate();
 	
-	public AccountBean oneAccountNum();
+	public ArrayList<AccountBean> findall();
 	
-	public boolean existAccountNum();
+	public AccountBean findbyaccountNum(String accountNum);
 	
-	public void updateAccountNum();
+	public int countAccount();
 	
-	public void deleteAccountNum();
+	public boolean existAccountNum(String accountNum);
+	
+	public void depositMoney(String accountNum ,int money);
+	
+	public void withdrawMoney(String accountNum,int money);
+	
+	public void deleteAccountNum(String accountNum);
 }

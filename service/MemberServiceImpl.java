@@ -28,7 +28,25 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public Memberbean[] findbysome(String name) {
-		// TODO Auto-generated method stub
+		int j = 0;
+		for(int i = 0;i<count;i++) {
+			if(members[i].getName().equals(name)) {
+				j++;
+			}
+		}
+		Memberbean[] beans = new Memberbean[j];
+		j = 0; // 만약 동명이인이 3명이라면
+		// j = 0 으로 초기화 하지 않으면
+		// 아래 부분에서 j 는 3부터 시작하기 때문
+		for(int i = 0;i<count;i++) {
+			if(members[i].getName().equals(name)) {
+				beans[j] = members[i];
+				j++;
+				if(j==beans.length) {
+					break;
+				}
+			}
+		}
 		return null;
 	}
 	
@@ -43,6 +61,10 @@ public class MemberServiceImpl implements MemberService {
 				return member;
 	}
 	@Override
+		public int count() {
+		return count;
+	}
+	@Override
 	public boolean exsitMember(String id, String pass) {
 		Memberbean member = new Memberbean();
 		boolean ok = false;
@@ -55,10 +77,6 @@ public class MemberServiceImpl implements MemberService {
 		return ok;
 	}
 	
-	@Override
-	public int count() {
-		return count;
-	}
 
 	
 	@Override

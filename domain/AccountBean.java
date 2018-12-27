@@ -24,9 +24,9 @@ public class AccountBean {
 	 }
 	 @Override
 	public String toString() {
-		return String.format(""
-				+ ""
-				+ "",accountNum,today,momey);
+		return String.format("°èÁÂ¹øÈ£:%s"
+				+ "³¯Â¥:%s"
+				+ "ÀÜ¾×:%d",accountNum,today,momey);
 	}
 	 
 }

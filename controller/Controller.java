@@ -6,7 +6,9 @@ import javax.swing.JOptionPane;
 public class Controller {
 	public static void main(String[] args) {
 		 Memberbean member = null;
+		 AccountBean account = null;
 		 MemberService memberService = new MemberServiceImpl();
+		 AccountBeanService accountBeanService = new AccountBeanServiceImpl();
 		while(true) {
 			switch(JOptionPane.showInputDialog("[0.종료]\n"
 					+ "1.회원가입\n"
@@ -16,7 +18,9 @@ public class Controller {
 					+ "5.회원수\n"
 					+ "6.로그인\n"
 					+ "7.회원수정\n"
-					+ "8.회원탈퇴\n")) {
+					+ "8.회원탈퇴\n"
+					+ "9.계좌생성"
+					+ "10.계좌 리스트")) {
 			case "0":
 				JOptionPane.showMessageDialog(null, "종료합니다");
 				return;
@@ -40,7 +44,6 @@ public class Controller {
 				break;
 			case "6":
 				
-				
 				break;
 			case "7":
 				memberService.updatePass(JOptionPane.showInputDialog("아이디:"),
@@ -48,6 +51,11 @@ public class Controller {
 						JOptionPane.showInputDialog("새로운비번"));	
 				break;
 			case "8":
+				break;
+			case "9":
+				JOptionPane.showMessageDialog(null,accountBeanService.createAccountNum());
+				break;
+			case "10":
 				
 				break;
 			}
